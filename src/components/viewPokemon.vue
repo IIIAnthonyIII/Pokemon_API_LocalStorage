@@ -1,19 +1,28 @@
 <template>
     <div>
-        <p>Hola soy la vista </p>
+        <div class="container">
+            <div class="row align-items-center">
+                <div v-for="(pokemon) in PokeResultAPI" :key="pokemon.name" class="col-3">
+                    <CardPokemon :PokeResultData="pokemon"/>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import CardPokemon from './cardPokemon.vue'
+
 export default {
     name: 'ViewPokemon',
-    data() {
-        return {
-            
-        }
+    props:{
+        PokeResultAPI:{
+            type: Array,
+            required: true,
+        },
     },
-    methods: {
-        
-    },
+    components:{
+        CardPokemon,
+    }
 }
 </script>

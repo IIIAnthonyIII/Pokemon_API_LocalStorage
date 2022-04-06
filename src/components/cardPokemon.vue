@@ -1,5 +1,5 @@
 <template>
-    <div v-if="state">
+    <div v-if="state" class="card">
         <div>
             {{pokemonData.name}}
         </div>
@@ -40,3 +40,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    .card{
+        border: 1px solid black;
+    }
+</style>

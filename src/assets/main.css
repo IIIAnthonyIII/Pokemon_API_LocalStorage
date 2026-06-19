@@ -1,7 +1,31 @@
 @import './base.css';
+@import "tailwindcss";
 
 #app {
   width: 100%;
   padding: 2rem;
   font-weight: normal;
 }
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+}
+.pokemon-card {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+.pokemon-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.glass-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+.type-badge-fire { background-color: #ff4422; }
+.type-badge-water { background-color: #3399ff; }
+.type-badge-grass { background-color: #77cc55; }
+.type-badge-poison { background-color: #aa5599; }
+.type-badge-flying { background-color: #8899ff; }
+.type-badge-bug { background-color: #aabb22; }
+.type-badge-normal { background-color: #aaaa99; }

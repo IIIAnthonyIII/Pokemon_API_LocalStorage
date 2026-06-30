@@ -8,8 +8,8 @@ on:
     branches:
       - master
       - develop
-  workflow_call:
-  workflow_dispatch:
+  workflow_call: #Para que este workflow sea reutilizable
+  workflow_dispatch: #Para que se pueda ejecutar manualmente desde GitHub Actions
 
 jobs:
   build:

@@ -1,0 +1,28 @@
+name: pokemon-api-cd-vercel
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml  # reutiliza tu workflow de CI existente
+
+  deploy:
+    needs: ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Vercel CLI
+        run: pnpm add -g vercel
+
+      - name: Pull Vercel config
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build con Vercel
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy a producción
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

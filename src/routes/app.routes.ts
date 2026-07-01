@@ -1,9 +1,11 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
-
-import App from '@/App.vue'
+import ViewPokemon from '@/components/pages/viewPokemon.vue'
 
 const routes = [
-  { path: '/', component: App },
+  { 
+    path: '/', 
+    component: ViewPokemon
+  }
 ]
 
 export const router = createRouter({
